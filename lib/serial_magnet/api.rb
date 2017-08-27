@@ -24,6 +24,11 @@ module SerialMagnet
       perform_get('issue', 'issues', id).first
     end
 
+    def issue_with_sku sku
+      verify_param(sku)
+      perform_get('issue', 'issues/sku', sku, 'issues').first
+    end
+
     def issues
       perform_get_all('issue', 'issues')
     end
